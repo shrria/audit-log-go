@@ -15,10 +15,10 @@ import (
 func sendToElasticsearch() {
 	elasticEndpoint := "https://localhost:9200"
 	elasticUsername := "elastic"
-	elasticPassword := "d8mcclbOQji2VplwaTDU"
+	elasticPassword := "<password>"
 
-	if elasticEndpoint == "" || elasticUsername == "" || elasticPassword == "" {
-		log.Fatalf("Error reading the environment variables")
+	if elasticPassword == "<password>" {
+		log.Fatalf("Error reading the password: %s", "Please replace <password> with the actual password")
 	}
 
 	cert, err := os.ReadFile("../cert/http_ca.crt")
